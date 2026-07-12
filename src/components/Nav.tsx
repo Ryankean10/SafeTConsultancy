@@ -28,8 +28,11 @@ export default function Nav() {
         >
           Book a consultation
         </Link>
-        <nav className="flex md:hidden items-center gap-4 text-sm text-neutral-700">
+        <nav className="flex md:hidden flex-nowrap items-center gap-3 text-sm text-neutral-700 overflow-x-auto whitespace-nowrap">
           <Link href="/services">Services</Link>
+          <Link href="/mgn-681">MGN 681</Link>
+          <Link href="/track-record">Track Record</Link>
+          <Link href="/about">About</Link>
           <Link href="/contact" className="text-navy font-medium">Contact</Link>
         </nav>
       </div>

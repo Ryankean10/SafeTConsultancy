@@ -4,24 +4,30 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", project: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: this currently opens the visitor's email client with a pre-filled message.
-    // Replace with a real form backend (e.g. Formspree, Resend, or a Vercel API route)
-    // before launch so submissions land reliably without depending on the visitor's
-    // local mail client being configured.
-    const subject = encodeURIComponent(`Enquiry from ${form.name || "website"}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nProject: ${form.project}\n\n${form.message}`
-    );
-    window.location.href = `mailto:admin@safetconsultancy.co.uk?subject=${subject}&body=${body}`;
-    setSent(true);
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      setForm({ name: "", email: "", project: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -73,14 +79,19 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="inline-flex items-center justify-center rounded-md bg-navy px-6 py-3 text-sm font-medium text-white hover:bg-navy-light transition-colors"
+        disabled={status === "sending"}
+        className="inline-flex items-center justify-center rounded-md bg-navy px-6 py-3 text-sm font-medium text-white hover:bg-navy-light transition-colors disabled:opacity-60"
       >
-        Send enquiry
+        {status === "sending" ? "Sending..." : "Send enquiry"}
       </button>
-      {sent && (
+      {status === "sent" && (
         <p className="text-sm text-neutral-500">
-          Opening your email client to send this - if nothing opens, email
-          admin@safetconsultancy.co.uk directly.
+          Thanks - your enquiry has been sent. We typically respond within 1 business day.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="text-sm text-red-600">
+          Something went wrong sending that. Please email admin@safetconsultancy.co.uk directly.
         </p>
       )}
     </form>

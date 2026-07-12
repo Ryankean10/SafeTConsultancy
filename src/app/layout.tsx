@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://safetconsultancy.co.uk"),
   title: "Safe-T Consultancy | Superyacht Safety, Technical & Project Management",
   description:
     "Engineering-led safety, technical and project management consultancy for superyachts. New builds, refits, commissioning and MGN 681 lithium-ion compliance, worldwide.",
