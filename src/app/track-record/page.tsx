@@ -4,24 +4,29 @@ import { DarkButton } from "@/components/Button";
 export const metadata: Metadata = {
   title: "Track Record | Safe-T Consultancy",
   description:
-    "Illustrative project examples across BESS commissioning, superyacht refit, and MGN 681 lithium-ion compliance.",
+    "Project examples across grid-scale battery energy storage delivery, superyacht refit management, new build assurance, and operational readiness.",
 };
 
 const projects = [
   {
     tag: "Energy infrastructure",
-    title: "Battery energy storage commissioning",
-    body: "Commissioning oversight for a multi-megawatt battery energy storage installation, including FAT/SAT witnessing and system validation.",
+    title: "End-to-end BESS delivery, Scotland",
+    body: "Engineering-to-PM delivery of battery energy storage systems across numerous grid-connected projects in Scotland, covering design, procurement, and delivery through to energisation.",
   },
   {
     tag: "Refit",
-    title: "Superyacht refit technical scope",
-    body: "Technical scope development and engineering input for a superyacht refit, covering mechanical and electrical systems.",
+    title: "Military-specification vessel refit",
+    body: "Refit management for a multi-million dollar vessel to military specification, including helicopter operations infrastructure and a complete overhaul of the main machinery and propulsion in the engine room.",
   },
   {
-    tag: "Compliance",
-    title: "MGN 681 lithium-ion compliance review",
-    body: "MGN 681 compliance review for a lithium-ion installation, including HASID facilitation and accredited crew training.",
+    tag: "New build",
+    title: "New build assurance and independent snagging",
+    body: "Independent assurance and snagging across the full build specification, verifying the delivered vessel matches what was contracted and paid for.",
+  },
+  {
+    tag: "Operations",
+    title: "Operational readiness and vessel management systems",
+    body: "Development of bespoke, class-compliant vessel operational systems - covering stock management and future-proofing - to support long-term operational readiness.",
   },
 ];
 
@@ -49,14 +54,6 @@ export default function TrackRecord() {
             <p className="text-sm text-neutral-600 leading-relaxed">{p.body}</p>
           </div>
         ))}
-
-        <div className="rounded-lg border border-dashed border-black/20 p-6 bg-sand">
-          <p className="text-sm text-neutral-600">
-            These entries are illustrative placeholders. Swap in real project types, scope, and
-            outcomes (vessel size or system kW rating, your role, and result) to replace this text
-            before launch.
-          </p>
-        </div>
       </section>
 
       <section className="mx-auto max-w-4xl px-6 pb-16 text-center">

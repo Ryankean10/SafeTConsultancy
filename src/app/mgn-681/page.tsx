@@ -4,7 +4,7 @@ import { DarkButton } from "@/components/Button";
 export const metadata: Metadata = {
   title: "MGN 681 Lithium-Ion Compliance | Safe-T Consultancy",
   description:
-    "MGN 681 lithium-ion compliance support for yachts: HASID facilitation, risk assessment, design compliance review, and accredited onboard crew training.",
+    "MGN 681 lithium-ion compliance support for yachts: HASID facilitation, risk assessment, design compliance review, and onboard crew training.",
 };
 
 const offerings = [
@@ -23,10 +23,6 @@ const offerings = [
   {
     title: "Onboard training",
     body: "Crew-facing training tailored to the installed system, covering lithium-ion hazards, warning signs, emergency response, isolation, escalation, firefighting considerations, and operational good practice.",
-  },
-  {
-    title: "Crew training accreditation",
-    body: "Fully accredited MGN 681 compliant training administered.",
   },
 ];
 

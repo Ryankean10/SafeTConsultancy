@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const credentials = [
   "MCA Chief Engineer",
   "BESS Professional Engineer",
-  "MGN 681 Accredited Trainer",
+  "MGN 681 Trainer",
   "Class 1 Marine Engineer",
 ];
 

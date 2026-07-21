@@ -4,7 +4,7 @@ import Link from "next/link";
 const trustBar = [
   "MCA Chief Engineer",
   "BESS Professional Engineer",
-  "MGN 681 Accredited Trainer",
+  "MGN 681 Trainer",
   "Global availability",
 ];
 
@@ -92,9 +92,9 @@ export default function Home() {
               Beyond compliance on paper
             </h2>
             <p className="text-neutral-600 leading-relaxed">
-              Hazard identification, risk assessment, design compliance review and accredited
-              onboard training - built to bridge the gap between design intent, operational use,
-              and real-world emergency readiness.
+              Hazard identification, risk assessment, design compliance review and onboard
+              training - built to bridge the gap between design intent, operational use, and
+              real-world emergency readiness.
             </p>
             <div className="mt-6">
               <DarkButton href="/mgn-681">Learn more</DarkButton>
@@ -106,7 +106,6 @@ export default function Home() {
               <li className="flex gap-3"><span className="text-navy-light font-medium">02</span>Risk assessment</li>
               <li className="flex gap-3"><span className="text-navy-light font-medium">03</span>Design compliance review</li>
               <li className="flex gap-3"><span className="text-navy-light font-medium">04</span>Onboard training</li>
-              <li className="flex gap-3"><span className="text-navy-light font-medium">05</span>Crew training accreditation</li>
             </ul>
           </div>
         </div>
