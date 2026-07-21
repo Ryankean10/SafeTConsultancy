@@ -47,15 +47,16 @@ export default function Contact() {
           <div className="mt-8 rounded-lg border border-black/10 p-6 bg-sand">
             <p className="text-sm font-medium text-navy mb-2">Prefer to book directly?</p>
             <p className="text-sm text-neutral-600 mb-4">
-              Add a Calendly (or similar) link here so visitors can book a consultation without
-              waiting for an email reply.
+              Book a consultation slot directly on the calendar, no need to wait for an email
+              reply.
             </p>
-            {/* TODO: replace with a real Calendly/booking link before launch */}
             <a
-              href="mailto:admin@safetconsultancy.co.uk?subject=Booking%20request"
+              href="https://calendar.app.google/JFuVWgQ9Bscr2YdT6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium text-navy-light hover:underline"
             >
-              Placeholder booking link -&gt;
+              Book a consultation -&gt;
             </a>
           </div>
         </div>
