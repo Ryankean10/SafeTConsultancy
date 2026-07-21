@@ -40,10 +40,19 @@ export default async function ProtectedAdminLayout({
           >
             Dashboard
           </Link>
+          <Link
+            href="/admin/leads"
+            className="block rounded-md px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            Leads
+          </Link>
+          <Link
+            href="/admin/tasks"
+            className="block rounded-md px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            Tasks
+          </Link>
           {/* Built in later milestones */}
-          <span className="block rounded-md px-3 py-2 text-white/35 cursor-default">
-            Leads · soon
-          </span>
           <span className="block rounded-md px-3 py-2 text-white/35 cursor-default">
             Traffic · soon
           </span>
