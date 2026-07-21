@@ -31,7 +31,11 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-        (c) Safe-T Consultancy. All rights reserved.
+        <span>(c) Safe-T Consultancy. All rights reserved.</span>
+        <span className="mx-2" aria-hidden="true">·</span>
+        <Link href="/admin/login" className="hover:text-white/80 transition-colors">
+          Staff login
+        </Link>
       </div>
     </footer>
   );
