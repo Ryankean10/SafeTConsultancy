@@ -23,6 +23,11 @@ export default async function ProtectedAdminLayout({
     .eq("id", user.id)
     .single();
 
+  const { count: reviewCount } = await supabase
+    .from("opportunities")
+    .select("*", { count: "exact", head: true })
+    .eq("ai_status", "pending");
+
   return (
     <div className="min-h-screen flex bg-neutral-50">
       <aside className="w-56 shrink-0 bg-navy text-white flex flex-col">
@@ -45,6 +50,17 @@ export default async function ProtectedAdminLayout({
             className="block rounded-md px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
           >
             Leads
+          </Link>
+          <Link
+            href="/admin/leads/review"
+            className="flex items-center justify-between rounded-md px-3 py-2 text-white/80 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            <span>Review</span>
+            {reviewCount ? (
+              <span className="rounded-full bg-gold px-1.5 py-0.5 text-[10px] font-semibold text-navy-dark">
+                {reviewCount}
+              </span>
+            ) : null}
           </Link>
           <Link
             href="/admin/tasks"

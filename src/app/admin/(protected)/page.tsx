@@ -26,7 +26,8 @@ export default async function AdminDashboard() {
     supabase
       .from("opportunities")
       .select("*", { count: "exact", head: true })
-      .in("stage", ACTIVE_STAGES),
+      .in("stage", ACTIVE_STAGES)
+      .or("ai_status.is.null,ai_status.eq.accepted"),
     supabase
       .from("tasks")
       .select("*", { count: "exact", head: true })

@@ -25,6 +25,9 @@ export default async function LeadsBoard() {
     .select(
       "id, title, stage, estimated_value, currency, contact:contacts(full_name, organisation), owner_profile:profiles!opportunities_owner_fkey(full_name)"
     )
+    // Hide AI-found opportunities still pending review (or dismissed); show human
+    // opportunities (ai_status null) and accepted AI ones.
+    .or("ai_status.is.null,ai_status.eq.accepted")
     .order("updated_at", { ascending: false });
 
   const opps = (data ?? []) as unknown as BoardOpp[];

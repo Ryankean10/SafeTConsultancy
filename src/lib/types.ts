@@ -52,6 +52,34 @@ export interface Opportunity {
   created_by: string | null;
   created_at: string;
   updated_at: string;
+  // AI discovery (Milestone: Discovery Engine)
+  ai_generated: boolean;
+  ai_confidence: number | null;
+  ai_rationale: string | null;
+  ai_status: AiStatus | null;
+  discovery_run_id: string | null;
+}
+
+export type AiStatus = "pending" | "accepted" | "dismissed";
+
+export interface DiscoveryQuery {
+  id: string;
+  label: string;
+  theme: string;
+  enabled: boolean;
+  created_by: string | null;
+  created_at: string;
+}
+
+export interface DiscoveryRun {
+  id: string;
+  kind: "scout" | "email";
+  status: "running" | "done" | "error";
+  stats: Record<string, unknown> | null;
+  error: string | null;
+  triggered_by: string | null;
+  created_at: string;
+  finished_at: string | null;
 }
 
 export type ActivityType = "note" | "call" | "email" | "meeting" | "stage_change";
